@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maahi | Personal Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --jade: #00a86b;
+      --crimson: #e62129;
+      --dark-bg: #0a0a0f;
+      --light-bg: #1a1a2e;
+      --text-light: #ffffff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--light-bg) 100%);
+      color: var(--text-light);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Floating background elements */
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .floating-element {
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.03;
+      color: var(--gold);
+      animation: float 30s linear infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translate(-150%, -150%) rotate(0deg); }
+      100% { transform: translate(150vw, 150vh) rotate(360deg); }
+    }
+    
+    /* Header */
+    header {
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(10, 10, 26, 0.7);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, var(--gold), var(--jade));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      position: relative;
+      padding: 5px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .profile-container {
+      position: relative;
+      margin-bottom: 40px;
+      perspective: 1000px;
+    }
+    
+    /* Profile image with animated frame */
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+      animation: profile-float 8s ease-in-out infinite;
+    }
+    
+    @keyframes profile-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    .profile-frame {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--gold), var(--jade), var(--crimson));
+      z-index: 1;
+      animation: rotate 10s linear infinite;
+      filter: blur(15px);
+      opacity: 0.7;
+    }
+    
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Name with special border effect */
+    .name-title {
+      font-size: 4.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      padding: 0 20px;
+    }
+    
+    .name-title::before, .name-title::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 3px solid transparent;
+      border-radius: 10px;
+      animation: border-pulse 4s infinite alternate;
+      z-index: -1;
+    }
+    
+    .name-title::before {
+      border-image: linear-gradient(45deg, var(--gold), var(--jade), var(--crimson));
+      border-image-slice: 1;
+      animation-delay: 0.5s;
+    }
+    
+    .name-title::after {
+      border-image: linear-gradient(45deg, var(--crimson), var(--gold), var(--jade));
+      border-image-slice: 1;
+      filter: blur(5px);
+      opacity: 0.7;
+    }
+    
+    @keyframes border-pulse {
+      0% { 
+        transform: scale(0.95);
+        opacity: 0.7;
+      }
+      100% { 
+        transform: scale(1.05);
+        opacity: 1;
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+      }
+    }
+    
+    .subtitle {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      background: rgba(10, 10, 26, 0.5);
+      padding: 15px 30px;
+      border-radius: 30px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .cta-button {
+      padding: 12px 30px;
+      background: linear-gradient(45deg, var(--gold), var(--jade));
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: all 0.6s ease;
+    }
+    
+    .cta-button:hover::before {
+      left: 100%;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+    }
+    
+    /* Sections */
+    section {
+      padding: 100px 20px;
+      position: relative;
+    }
+    
+    .section-title {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--crimson), var(--gold), var(--jade));
+      border-radius: 2px;
+    }
+    
+    /* About Section */
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(26, 26, 46, 0.5);
+      padding: 50px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .about-text {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.8;
+    }
+    
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+      border-radius: 15px;
+      text-align: center;
+      min-width: 160px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+      border-color: var(--gold);
+    }
+    
+    /* Contact Section */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .social-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 25px 15px;
+      background: rgba(26, 26, 46, 0.5);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .social-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      border-color: var(--gold);
+      background: rgba(26, 26, 46, 0.7);
+    }
+    
+    .social-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      color: var(--gold);
+    }
+    
+    .social-card:hover .social-icon {
+      transform: scale(1.2) rotate(10deg);
+      color: white;
+    }
+    
+    .social-name {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 60px 20px;
+      border-top: 3px solid var(--gold);
+    }
+    
+    .footer-logo {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+    
+    .bilingual {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      font-size: 1.2rem;
+    }
+    
+    .brotherhood-message {
+      font-size: 1.8rem;
+      margin: 30px 0;
+      color: var(--gold);
+    }
+    
+    .copyright {
+      margin-top: 30px;
+      opacity: 0.7;
+      font-size: 1rem;
+    }
+    
+    /* Scroll animations */
+    [data-scroll] {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    [data-scroll].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .name-title { font-size: 3.5rem; }
+      .section-title { font-size: 2.3rem; }
+      .nav-links { gap: 15px; }
+      .about-content { padding: 30px 20px; }
+      .social-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+    }
+    
+    /* Instructions panel */
+    .instructions-panel {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(10, 10, 26, 0.9);
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 400px;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    }
+    
+    .instructions-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .instructions-title {
+      font-size: 1.4rem;
+      color: var(--gold);
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .instructions-content {
+      line-height: 1.6;
+    }
+    
+    .step {
+      margin-bottom: 15px;
+      padding-left: 20px;
+      border-left: 3px solid var(--jade);
+    }
+    
+    .step-number {
+      font-weight: bold;
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating background elements -->
+  <div class="floating-elements">
+    <div class="floating-element" style="top:10%;left:5%;">龍</div>
+    <div class="floating-element" style="top:30%;left:80%;">智</div>
+    <div class="floating-element" style="top:60%;left:20%;">武</div>
+    <div class="floating-element" style="top:85%;left:70%;">力</div>
+    <div class="floating-element" style="top:40%;left:40%;">禅</div>
+  </div>
+  
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">MAHI</div>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="profile-container">
+      <div class="profile-frame"></div>
+      <img src="https://i.ibb.co/Gf4rmWJK/Maahi-4K.jpg" alt="Maahi" class="profile-img">
+    </div>
+    <h1 class="name-title">MAAHI</h1>
+    <p class="subtitle">
+      Sri Lankan Visionary • Tech Admirer<br>
+      斯里兰卡梦想家 • 科技崇拜者
+    </p>
+    <button class="cta-button">Connect With Me</button>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about" id="about" data-scroll>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Hi, I'm Maahi.</p>
+        <p>I've always believed in quiet consistency and thoughtful action.</p>
+        <p>My background is diverse, shaped by dynamic experiences and cross-cultural learning.</p>
+        <p>I value clarity in thought, precision in work, and integrity in every interaction.</p>
+        <p>Outside of my usual routines, I explore emerging ideas, digital systems, and global perspectives.</p>
+        <p>Adaptability, observation, and quiet leadership define how I move through life.</p>
+        <p>I don't rush. I don't reveal everything.</p>
+        <p>Every step is intentional, every silence has weight.</p>
+      </div>
+      
+      <div class="stats">
+        <div class="stat-card">
+          <h3>Age</h3>
+          <p>19 Years</p>
+        </div>
+        <div class="stat-card">
+          <h3>Height</h3>
+          <p>169cm</p>
+        </div>
+        <div class="stat-card">
+          <h3>Weight</h3>
+          <p>70kg</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="contact" id="contact" data-scroll>
+    <h2 class="section-title">Connect With Me</h2>
+    <div class="social-grid">
+      <a href="https://wa.me/94703608393" target="_blank" class="social-card">
+        <i class="fab fa-whatsapp social-icon"></i>
+        <span class="social-name">WhatsApp</span>
+      </a>
+      
+      <a href="#" class="social-card">
+        <i class="fab fa-facebook social-icon"></i>
+        <span class="social-name">Facebook</span>
+      </a>
+      
+      <a href="#" class="social-card">
+        <i class="fab fa-instagram social-icon"></i>
+        <span class="social-name">Instagram</span>
+      </a>
+      
+      <a href="#" class="social-card">
+        <i class="fab fa-tiktok social-icon"></i>
+        <span class="social-name">TikTok</span>
+      </a>
+      
+      <a href="mailto:maahi@example.com" class="social-card">
+        <i class="fas fa-envelope social-icon"></i>
+        <span class="social-name">Email</span>
+      </a>
+      
+      <a href="#" class="social-card">
+        <i class="fab fa-weixin social-icon"></i>
+        <span class="social-name">WeChat</span>
+      </a>
+      
+      <a href="#" class="social-card">
+        <i class="fab fa-alipay social-icon"></i>
+        <span class="social-name">Alipay</span>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer data-scroll>
+    <div class="footer-logo">龙</div>
+    <div class="bilingual">
+      <p>谢谢您访问我的网站！</p>
+      <p>Thank you for visiting my website!</p>
+    </div>
+    <div class="brotherhood-message">
+      中国-斯里兰卡兄弟情谊永存！ 🇨🇳🤝🇱🇰<br>
+      SL-China Brotherhood Forever!
+    </div>
+    <p class="copyright">© 2025 Mahi | Crafted with precision and intention</p>
+  </footer>
+  
+  <!-- Instructions Panel -->
+  <div class="instructions-panel">
+    <div class="instructions-header">
+      <h3 class="instructions-title">Website Setup Guide</h3>
+      <button class="close-btn">&times;</button>
+    </div>
+    <div class="instructions-content">
+      <div class="step">
+        <span class="step-number">Step 1:</span> Replace the profile image with your own
+      </div>
+      <div class="step">
+        <span class="step-number">Step 2:</span> Publish your website for free
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scroll animation
+    const scrollElements = document.querySelectorAll('[data-scroll]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    scrollElements.forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Close instructions panel
+    document.querySelector('.close-btn').addEventListener('click', function() {
+      document.querySelector('.instructions-panel').style.display = 'none';
+    });
+    
+    // Profile image hover effect
+    const profileImg = document.querySelector('.profile-img');
+    profileImg.addEventListener('mouseenter', () => {
+      profileImg.style.animation = 'none';
+      profileImg.style.transform = 'scale(1.1) rotate(5deg)';
+      profileImg.style.boxShadow = '0 0 40px rgba(212, 175, 55, 0.8)';
+    });
+    
+    profileImg.addEventListener('mouseleave', () => {
+      profileImg.style.animation = 'profile-float 8s ease-in-out infinite';
+      profileImg.style.transform = '';
+      profileImg.style.boxShadow = '';
+    });
+    
+    // Floating elements animation
+    const floatingElements = document.querySelectorAll('.floating-element');
+    floatingElements.forEach((el, index) => {
+      el.style.animationDelay = `${index * 5}s`;
+    });
+    
+    // CTA button smooth scroll
+    document.querySelector('.cta-button').addEventListener('click', function() {
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
