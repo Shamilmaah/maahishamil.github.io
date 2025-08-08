@@ -1497,7 +1497,6 @@
         </div>
         <div class="about-text">
           I've always believed in quiet consistency and thoughtful action.
-          我一直相信安静的坚持和深思熟虑的行动。
         </div>
         <div class="about-text">
           My background is diverse, shaped by dynamic experiences and cross-cultural learning.
@@ -1513,10 +1512,10 @@
         </div>
         <div class="about-text">
           I don't rush. I don't reveal everything.
+          我不急躁，也不轻易展示自己。
         </div>
         <div class="about-text">
           Every step is intentional, every silence has weight.
-          每一步都是有意为之，每一次沉默都有分量。
         </div>
       </div>
     </section>
@@ -1922,8 +1921,8 @@
         <p>Thank you for visiting my website!</p>
       </div>
       <div class="brotherhood-message">
-        中国-斯里兰卡兄弟情谊永存！ 🇨🇳🤝🇱🇰<br>
-        SL-Brotherhood Forever!
+        中国-斯里兰卡兄弟情谊永存！ 🤝🇱🇰<br>
+        SL- Forever!
       </div>
       <p class="copyright">© 2025 Mahi | Crafted with precision and intention</p>
     </footer>
@@ -1932,7 +1931,7 @@
   <!-- AI Chat Widget -->
   <div class="ai-chat-widget">
     <div class="chat-header">
-      <div class="chat-title">SL-CN Tech Assistant</div>
+      <div class="chat-title">SL Tech Assistant</div>
       <div class="lang-switcher">
         <button class="lang-btn active" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="zh">中文</button>
@@ -1941,7 +1940,7 @@
     </div>
     <div class="chat-messages">
       <div class="message ai-message">
-        Hello brother! How can I assist with Chinese tech today?<br>
+        Hello brother! How can I assist today?<br>
         <span style="opacity:0.7; font-size:0.9em">你好兄弟! 今天需要什么中国科技方面的帮助?</span>
       </div>
     </div>
@@ -2032,9 +2031,9 @@
     const guestbookForm = document.getElementById('sign-guestbook');
     const guestbookEntries = document.getElementById('guestbook-entries');
     const sampleEntries = [
-      { name: "Hirusha", message: "Amazing tech showcase! 🇱🇰❤️", date: "2025-07-19" },
-      { name: "Sadaru", message: "Mekanm pissuwk bn.Supiri kollo !", date: "2025-07-18" },
-      { name: "Chen", message: "The theme is incredible! 中国和斯里兰卡是好朋友！", date: "2025-07-17" }
+      { name: "Liyan", message: "Amazing tech showcase! SL friendship forever! 🇱🇰❤️", date: "2025-07-19" },
+      { name: "Saman", message: "Your vision inspires me. Let's build tech bridges !", date: "2025-07-18" },
+      { name: "Chen", message: "The theme is incredible!", date: "2025-07-17" }
     ];
     
     function renderGuestbookEntries() {
@@ -2381,5 +2380,420 @@
       document.getElementById('translation-result').textContent = result;
     });
   </script>
+
+<!-- Diana's Full Beauty + Power Pack Script -->
+<script>
+(function(){
+  // Namespace
+  const D = { q: s => document.querySelector(s), qa: s => document.querySelectorAll(s) };
+
+  /* ===== Extra styles injected (safe namespace) ===== */
+  const extraCss = `
+  /* Diana Power Pack additions */
+  .diana-hero-flare{position:absolute;inset:0;pointer-events:none;z-index:3;opacity:0;transition:opacity .9s ease}
+  .diana-hero-flare.active{opacity:1}
+  .diana-shimmer{background:linear-gradient(90deg,transparent,rgba(212,175,55,.9),transparent);background-size:200% 100%;animation:diana-shim 2.8s linear infinite}
+  @keyframes diana-shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
+  .diana-parallax{will-change:transform}
+  .diana-cursor-trail{position:fixed;left:0;top:0;pointer-events:none;z-index:12000}
+  .diana-contrast-toggle{position:fixed;top:20px;right:20px;z-index:15000}
+  .diana-music-toggle{position:fixed;top:80px;right:20px;z-index:15000}
+  .diana-social-dock{position:fixed;left:10px;top:40%;transform:translateY(-50%);z-index:14000;display:flex;flex-direction:column;gap:12px}
+  .diana-social-icon{width:52px;height:52px;border-radius:12px;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;border:2px solid transparent;backdrop-filter: blur(4px);transition:transform .25s ease, border-color .25s}
+  .diana-social-icon:hover{transform:translateX(8px);border-color:var(--primary-color)}
+  .diana-badge-popup{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(120%);background:linear-gradient(90deg,var(--secondary-color),var(--primary-color));color:#000;padding:14px 20px;border-radius:14px;z-index:16000;box-shadow:0 10px 30px rgba(0,0,0,.5);font-weight:700;transition:transform .6s cubic-bezier(.2,.9,.2,1),opacity .4s;opacity:0}
+  .diana-badge-popup.show{transform:translateX(-50%) translateY(0);opacity:1}
+  .diana-clock{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:15000;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.06)}
+  `;
+  const s = document.createElement('style'); s.textContent = extraCss; document.head.appendChild(s);
+
+  /* ===== 1) Hero entrance: flare + shimmer on name + profile zoom ===== */
+  function heroEntrance(){
+    const hero = D.q('.hero');
+    if(!hero) return;
+    // flare element
+    const flare = document.createElement('div'); flare.className='diana-hero-flare';
+    flare.innerHTML = '<div style="position:absolute;left:50%;top:30%;transform:translateX(-50%);width:120%;height:120%;background:radial-gradient(ellipse at center, rgba(212,175,55,0.12), transparent 30%);"></div>';
+    hero.appendChild(flare);
+
+    // shimmer for name
+    const name = D.q('.name-title'); if(name){ name.classList.add('diana-shimmer'); name.style.webkitBackgroundClip='text'; name.style.color='transparent'; }
+
+    // profile zoom
+    const img = D.q('.profile-img'); if(img){ img.style.transform='scale(.6)'; img.style.opacity='0'; setTimeout(()=>{ img.style.transition='transform .9s cubic-bezier(.2,.8,.2,1),opacity .9s'; img.style.transform='scale(1)'; img.style.opacity='1'; flare.classList.add('active'); setTimeout(()=>flare.classList.remove('active'),2200); },220);
+    }
+  }
+
+  /* ===== 2) Parallax on mousemove for depth ===== */
+  function setupParallax(){
+    const layers = Array.from(document.querySelectorAll('.profile-frame, .profile-img, .name-title, .subtitle, .profile-container'));
+    const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));
+    document.addEventListener('mousemove', e=>{
+      const cx = window.innerWidth/2, cy = window.innerHeight/2;
+      const dx = (e.clientX - cx)/cx, dy = (e.clientY - cy)/cy;
+      layers.forEach((el,i)=>{
+        const depth = (i+1)/14; // subtle
+        el.style.transform = `translate3d(${clamp(-dx*20*depth,-30,30)}px, ${clamp(-dy*18*depth,-30,30)}px, 0) rotateY(${dx*3*depth}deg)`;
+        el.classList.add('diana-parallax');
+      });
+    });
+  }
+
+  /* ===== 3) Particle aura around elemental orb ===== */
+  function auraParticles(){
+    const orb = D.q('.elemental-orb'); if(!orb) return;
+    const canvas = document.createElement('canvas'); canvas.className='diana-canvas-orb'; canvas.style.position='fixed'; canvas.style.left='0'; canvas.style.top='0'; canvas.style.pointerEvents='none'; canvas.style.zIndex=9998; document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d'); function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; } window.addEventListener('resize',resize); resize();
+    const particles=[]; function spawn(){
+      const rect = orb.getBoundingClientRect(); const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+      for(let i=0;i<6;i++){ particles.push({x:cx,y:cy, vx:(Math.random()-0.5)*1.6, vy:(Math.random()-0.9)*1.6, life:60+Math.random()*40, r:2+Math.random()*3}); }
+    }
+    let tick=0; function frame(){ ctx.clearRect(0,0,canvas.width,canvas.height); tick++; if(Math.random()<0.14) spawn(); for(let i=particles.length-1;i>=0;i--){ const p=particles[i]; p.x+=p.vx; p.y+=p.vy; p.vy+=0.02; p.life--; const alpha = Math.max(0,p.life/100); ctx.beginPath(); ctx.fillStyle = `rgba(212,175,55,${alpha})`; ctx.arc(p.x,p.y,p.r*alpha,0,Math.PI*2); ctx.fill(); if(p.life<=0) particles.splice(i,1);} requestAnimationFrame(frame);} frame();
+  }
+
+  /* ===== 4) Dragon orb in VR (Three.js) ===== */
+  function setupDragonOrb(){
+    const container = D.q('#vr-scene'); if(!container) return;
+    // remove any existing canvas children safely
+    while(container.firstChild) container.removeChild(container.firstChild);
+    const w = container.clientWidth, h = container.clientHeight;
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(40, w/h, 0.1, 1000);
+    camera.position.z = 3.5;
+    const renderer = new THREE.WebGLRenderer({alpha:true, antialias:true}); renderer.setSize(w,h); container.appendChild(renderer.domElement);
+    const geo = new THREE.SphereGeometry(1, 64, 64);
+    const mat = new THREE.MeshStandardMaterial({emissive:0x442200, emissiveIntensity:0.5, metalness:0.2, roughness:0.4});
+    const sphere = new THREE.Mesh(geo, mat); scene.add(sphere);
+    // aura light
+    const light = new THREE.PointLight(0xffd27a, 1.7, 10); light.position.set(2,2,2); scene.add(light);
+    const amb = new THREE.AmbientLight(0x202030,0.7); scene.add(amb);
+    // subtle noise texture via shader-like wobble
+    const clock = new THREE.Clock();
+    function onResize(){ const W=container.clientWidth, H=container.clientHeight; renderer.setSize(W,H); camera.aspect=W/H; camera.updateProjectionMatrix(); }
+    window.addEventListener('resize', onResize);
+    function render(){ requestAnimationFrame(render); const t=clock.getElapsedTime(); sphere.rotation.y += 0.006; sphere.rotation.x = Math.sin(t*0.3)*0.05; // pulse emissive color by mode
+      const mode = document.body.className || '';
+      let color = 0xd4af37; if(mode.includes('water')) color=0x00c0ff; if(mode.includes('earth')) color=0x8b4513; if(mode.includes('metal')) color=0xc0c0c0;
+      light.color.setHex(color); mat.emissive.setHex(color);
+      renderer.render(scene,camera);
+    }
+    render();
+  }
+
+  /* ===== 5) Auto theme music + mute ===== */
+  function setupMusic(){
+    const audio = document.createElement('audio'); audio.loop=true; audio.crossOrigin='anonymous'; audio.id='diana-ambience';
+    const tracks = { fire: 'https://assets.mixkit.co/preview/mixkit-ambient-fireplace-1885.mp3', water: 'https://assets.mixkit.co/preview/mixkit-soothing-sea-waves-1187.mp3', earth: 'https://assets.mixkit.co/preview/mixkit-forest-ambience-1374.mp3', metal: 'https://assets.mixkit.co/preview/mixkit-futuristic-technology-1333.mp3' };
+    audio.src = tracks.fire; document.body.appendChild(audio);
+    const btn = document.createElement('button'); btn.className='diana-music-toggle sign-btn'; btn.textContent='🔊 Ambience'; document.body.appendChild(btn);
+    btn.addEventListener('click', ()=>{ if(audio.paused){ audio.play(); btn.textContent='🔈 Mute'; } else { audio.pause(); btn.textContent='🔊 Ambience'; } });
+    // change track on mode change
+    const obs = new MutationObserver(()=>{
+      const mode = document.body.className || '';
+      if(mode.includes('water')) audio.src=tracks.water; else if(mode.includes('earth')) audio.src=tracks.earth; else if(mode.includes('metal')) audio.src=tracks.metal; else audio.src=tracks.fire; if(!audio.paused) audio.play();
+    }); obs.observe(document.body,{attributes:true,attributeFilter:['class']});
+  }
+
+  /* ===== 6) Neon cursor trail ===== */
+  function cursorTrail(){
+    const trail = document.createElement('canvas'); trail.className='diana-cursor-trail'; document.body.appendChild(trail);
+    const ctx = trail.getContext('2d'); function resize(){ trail.width = innerWidth; trail.height = innerHeight; } resize(); addEventListener('resize', resize);
+    const points=[]; document.addEventListener('mousemove', e=>{ points.push({x:e.clientX, y:e.clientY, life:30}); });
+    function loop(){ ctx.clearRect(0,0,trail.width,trail.height); for(let i=points.length-1;i>=0;i--){ const p=points[i]; p.life--; const a = p.life/30; ctx.beginPath(); ctx.fillStyle = `rgba(212,175,55,${a})`; ctx.arc(p.x,p.y,6*a,0,Math.PI*2); ctx.fill(); if(p.life<=0) points.splice(i,1); } requestAnimationFrame(loop);} loop();
+    // change color with mode
+    const mo = new MutationObserver(()=>{ /* left for future color customization */ }); mo.observe(document.body,{attributes:true,attributeFilter:['class']});
+  }
+
+  /* ===== 7) Advanced scroll animations & microinteractions ===== */
+  function scrollAndMicro(){
+    if(window.gsap && window.ScrollTrigger){
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.utils.toArray('section, .feature-card, .tech-card, .exhibit-item, .timeline-item, .code-challenge').forEach((el, i)=>{
+        gsap.fromTo(el, {opacity:0, y:40, scale:0.98}, {opacity:1, y:0, scale:1, duration:0.9, ease:'power3.out', scrollTrigger:{trigger:el, start:'top 85%'}});
+      });
+    }
+    // microinteractions click bounce
+    D.qa('button, .sign-btn, .nav-link, .social-card, .feature-card, .tech-card').forEach(el=>{
+      el.addEventListener('mousedown', ()=>{ el.style.transform='scale(.96)'; }); el.addEventListener('mouseup', ()=>{ setTimeout(()=>el.style.transform='',120); });
+      el.addEventListener('mouseover', ()=>{ el.style.transition='transform .25s'; });
+    });
+  }
+
+  /* ===== 8) Real-time clock + greeting ===== */
+  function setupClock(){
+    const el = document.createElement('div'); el.className='diana-clock'; document.body.appendChild(el);
+    function update(){ const now=new Date(); const hh = now.getHours(); const mm = now.getMinutes().toString().padStart(2,'0'); const greet = hh<12? 'Good morning, legend 🌞' : hh<18? 'Afternoon, champ ☀️' : 'Evening, warrior 🌙'; el.textContent = `${greet} — ${hh}:${mm}`; }
+    update(); setInterval(update,1000*30);
+  }
+
+  /* ===== 9) Floating social dock ===== */
+  function socialDock(){
+    const dock = document.createElement('div'); dock.className='diana-social-dock'; dock.innerHTML =
+      `<a href="https://wa.me/94703608393" target="_blank" class="diana-social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="diana-social-icon" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="diana-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>`; document.body.appendChild(dock);
+  }
+
+  /* ===== 10) Achievement badges stored in localStorage ===== */
+  function badgesSystem(){
+    const key='diana_badges'; const earned = JSON.parse(localStorage.getItem(key)||'[]');
+    function showPopup(text){ let pop = D.q('.diana-badge-popup'); if(!pop){ pop=document.createElement('div'); pop.className='diana-badge-popup'; document.body.appendChild(pop);} pop.textContent = text; pop.classList.add('show'); setTimeout(()=>pop.classList.remove('show'),3600); }
+    function earn(id, text){ if(!earned.includes(id)){ earned.push(id); localStorage.setItem(key, JSON.stringify(earned)); showPopup(text); }}
+    // example triggers
+    // sign guestbook -> badge
+    const btn = D.q('#sign-guestbook'); if(btn){ btn.addEventListener('click', ()=>{ earn('signed_guestbook','🐉 Dragon Guest Unlocked!'); }); }
+    // scroll to end -> explorer
+    window.addEventListener('scroll', ()=>{ if(window.scrollY + window.innerHeight >= document.body.scrollHeight - 80) earn('scrolled_end','🏁 End Explorer Badge!'); });
+  }
+
+  /* ===== Accessibility + persistent mode (localStorage) ===== */
+  function accessibilityAndPersistence(){
+    // high contrast toggle
+    const cbtn = document.createElement('button'); cbtn.className='diana-contrast-toggle sign-btn'; cbtn.textContent='🌓 Contrast'; document.body.appendChild(cbtn);
+    cbtn.addEventListener('click', ()=>{ document.body.classList.toggle('diana-high-contrast'); });
+    const css2 = document.createElement('style'); css2.textContent = `.diana-high-contrast *{filter:contrast(1.2) saturate(1.2) !important;color:#fffbdb !important} .diana-high-contrast body{background:black!important}`; document.head.appendChild(css2);
+    // persist elemental-mode
+    const orb = D.q('.elemental-orb'); if(localStorage.getItem('d_mode')){ document.body.className = localStorage.getItem('d_mode'); }
+    if(orb){ orb.addEventListener('click', ()=>{ localStorage.setItem('d_mode', document.body.className); }); }
+  }
+
+  /* ===== small helpers ===== */
+  function safeRun(fn){ try{ fn(); }catch(e){ console.warn('DianaPack err',e); } }
+
+  // init all
+  safeRun(heroEntrance);
+  safeRun(setupParallax);
+  safeRun(auraParticles);
+  safeRun(setupDragonOrb);
+  safeRun(setupMusic);
+  safeRun(cursorTrail);
+  safeRun(scrollAndMicro);
+  safeRun(setupClock);
+  safeRun(socialDock);
+  safeRun(badgesSystem);
+  safeRun(accessibilityAndPersistence);
+
+  // ensure GSAP ScrollTrigger animations re-init on load
+  window.addEventListener('load', ()=>{ if(window.gsap && window.ScrollTrigger){ gsap.utils.toArray('section').forEach(s=>{ ScrollTrigger.refresh(); }); } });
+})();
+</script>
+
+
+<!-- Diana God Mode: Features 1-6 + clock relocate -->
+<script>
+(function(){
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+  /* Extra styles for God Mode */
+  const css = `
+  /* Portal entry */
+  .diana-portal-overlay{position:fixed;inset:0;z-index:20000;background:radial-gradient(ellipse at center, rgba(10,10,20,0.95) 0%, rgba(0,0,0,0.0) 40%);display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:1;transition:opacity .9s ease}
+  .diana-ring{position:absolute;border-radius:50%;border:2px solid rgba(212,175,55,0.12);box-shadow:0 0 40px rgba(212,175,55,0.06);animation:spin 6s linear infinite;opacity:0.9}
+  .diana-ring.r2{width:60vmin;height:60vmin;animation-duration:8s;border-color:rgba(0,192,255,0.08)}
+  .diana-ring.r1{width:40vmin;height:40vmin;animation-duration:6s}
+  .diana-ring.r3{width:80vmin;height:80vmin;animation-duration:10s;border-color:rgba(139,69,19,0.06)}
+  @keyframes spin{from{transform:rotate(0deg)} to{transform:rotate(360deg)}}
+
+  /* weather overlays */
+  .diana-weather-canvas{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:15000;mix-blend-mode:screen;opacity:0.95}
+  .diana-weather-badge{position:fixed;bottom:80px;left:20px;z-index:15001;background:rgba(0,0,0,0.5);padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.05);color:#fff;font-weight:600;backdrop-filter:blur(6px)}
+
+  /* AI sidekick */
+  .diana-sidekick{position:fixed;right:100px;bottom:90px;width:76px;height:76px;border-radius:50%;z-index:16000;background:linear-gradient(90deg,#ffd27a,#e62129);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.4);cursor:pointer;border:3px solid rgba(255,255,255,0.06)}
+  .diana-sidekick img{width:70%;height:70%;object-fit:cover;border-radius:50%}
+
+  /* visitors globe */
+  .diana-visitors{position:fixed;right:10px;top:20%;width:160px;height:100px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.2));backdrop-filter:blur(6px);z-index:14000;padding:10px;border:1px solid rgba(255,255,255,0.03);overflow:hidden}
+  .diana-map{width:100%;height:100%;position:relative}
+  .diana-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--primary-color);box-shadow:0 0 10px var(--secondary-color);opacity:0.9;transform:scale(0.6);animation:pop 2s ease-in-out infinite}
+  @keyframes pop{0%{transform:scale(.6);opacity:.2}50%{transform:scale(1.05);opacity:1}100%{transform:scale(.6);opacity:.2}}
+
+  /* relocate clock to bottom-left */
+  .diana-clock{top:auto !important; left:20px !important; transform:none !important; bottom:24px !important; padding:10px 14px !important; border-radius:12px !important; z-index:15002 !important}
+
+  /* smart mode badge */
+  .diana-mode-badge{position:fixed;left:20px;bottom:140px;z-index:15003;background:linear-gradient(90deg,var(--secondary-color),var(--primary-color));color:#000;padding:8px 12px;border-radius:12px;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+  `;
+  const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+
+  /* Portal entry animation (shows once per session) */
+  function portalEntry(){
+    if(sessionStorage.getItem('diana_portal_shown')) return;
+    sessionStorage.setItem('diana_portal_shown','1');
+    const overlay = document.createElement('div'); overlay.className='diana-portal-overlay'; overlay.innerHTML = '<div class="diana-ring r1"></div><div class="diana-ring r2"></div><div class="diana-ring r3"></div>';
+    document.body.appendChild(overlay);
+    // gentle fade and remove after animation
+    setTimeout(()=>{ overlay.style.transition='opacity 1s ease'; overlay.style.opacity='0'; setTimeout(()=>overlay.remove(),1200); },2200);
+  }
+
+  /* Weather visuals using Open-Meteo (no API key) */
+  function setupWeather(){
+    const canvas = document.createElement('canvas'); canvas.className='diana-weather-canvas'; document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    function resize(){ canvas.width = innerWidth; canvas.height = innerHeight; } resize(); addEventListener('resize', resize);
+
+    const badge = document.createElement('div'); badge.className='diana-weather-badge'; badge.textContent='Weather: unknown'; document.body.appendChild(badge);
+
+    let mode='clear';
+
+    function drawRain(drops){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let i=0;i<drops.length;i++){
+        const p = drops[i];
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(180,200,255,0.25)';
+        ctx.lineWidth = 1.6;
+        ctx.moveTo(p.x,p.y);
+        ctx.lineTo(p.x - p.vx*3, p.y - p.vy*2.5);
+        ctx.stroke();
+        p.x += p.vx; p.y += p.vy; p.vy += 0.4;
+        if(p.y > canvas.height + 20){ p.y = -10; p.x = Math.random()*canvas.width; p.vy = 4 + Math.random()*4; p.vx = -1 + Math.random()*2; }
+      }
+    }
+    function drawSnow(flakes){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(let i=0;i<flakes.length;i++){
+        const f = flakes[i];
+        ctx.beginPath(); ctx.fillStyle='rgba(255,255,255,0.85)'; ctx.arc(f.x,f.y,f.r,0,Math.PI*2); ctx.fill();
+        f.x += Math.sin(f.t)*0.6; f.y += f.v; f.t += 0.01;
+        if(f.y > canvas.height + 10){ f.y = -10; f.x = Math.random()*canvas.width; }
+      }
+    }
+    function clearScreen(){ ctx.clearRect(0,0,canvas.width,canvas.height); }
+
+    let raindrops=[], snowflakes=[];
+    function createDrops(){ raindrops = []; for(let i=0;i<600;i++){ raindrops.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:-1+Math.random()*2, vy:4+Math.random()*4}); } }
+    function createFlakes(){ snowflakes = []; for(let i=0;i<250;i++){ snowflakes.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:1+Math.random()*3,v:0.6+Math.random()*1.6,t:Math.random()*10}); } }
+
+    function loop(){
+      if(mode==='rain') drawRain(raindrops);
+      else if(mode==='snow') drawSnow(snowflakes);
+      else clearScreen();
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    // get geolocation then query Open-Meteo
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(pos=>{
+        const lat = pos.coords.latitude.toFixed(4), lon = pos.coords.longitude.toFixed(4);
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+        fetch(url).then(r=>r.json()).then(data=>{
+          if(data && data.current_weather){
+            const temp = data.current_weather.temperature; const wcode = data.current_weather.weathercode;
+            badge.textContent = `Weather: ${temp}°C code:${wcode}`;
+            // simple mapping
+            if([61,63,65,80,81,82].includes(wcode)) { mode='rain'; createDrops(); }
+            else if([71,73,75,85,86].includes(wcode)) { mode='snow'; createFlakes(); }
+            else { mode='clear'; }
+          }
+        }).catch(()=>{ badge.textContent='Weather: unavailable'; });
+      }, err=>{ badge.textContent='Weather: denied'; });
+    } else { badge.textContent='Geolocation unsupported'; }
+  }
+
+  /* AI Sidekick: floating avatar that toggles existing chat */
+  function aiSidekick(){
+    const side = document.createElement('div'); side.className='diana-sidekick'; side.title='Ask Diana'; side.innerHTML = '<img src=\"https://i.ibb.co/dwhsVFHS/My-WEB-PROFILE-PIC.jpg\" alt=\"d\">';
+    document.body.appendChild(side);
+    side.addEventListener('click', ()=>{
+      const widget = document.querySelector('.ai-chat-widget'); if(widget){ widget.classList.toggle('active'); const input = widget.querySelector('.chat-input'); if(input) input.focus(); }
+      // also give a friendly tip
+      const pop = document.createElement('div'); pop.className='diana-mode-badge'; pop.textContent='Hi — ask me about tech or the dragon!'; document.body.appendChild(pop); setTimeout(()=>pop.remove(),2200);
+    });
+  }
+
+  /* Visitors glow map (simulated visual) */
+  function visitorsMap(){
+    const wrap = document.createElement('div'); wrap.className='diana-visitors'; wrap.innerHTML = '<div style=\"font-size:12px;opacity:.8;margin-bottom:6px\">Live Visitors</div><div class=\"diana-map\"></div>';
+    document.body.appendChild(wrap);
+    const map = wrap.querySelector('.diana-map');
+    // create random dots in map box coordinates
+    function spawnDots(n){ for(let i=0;i<n;i++){ const d = document.createElement('div'); d.className='diana-dot'; d.style.left = (10 + Math.random()*80) + '%'; d.style.top = (10 + Math.random()*80) + '%'; d.style.animationDelay = (Math.random()*2) + 's'; map.appendChild(d); setTimeout(()=>{ d.remove(); }, 8000 + Math.random()*8000); } }
+    // keep spawning groups
+    spawnDots(6); setInterval(()=>spawnDots(2+Math.floor(Math.random()*4)), 3000);
+  }
+
+  /* Smart elemental mode triggers by engagement */
+  function smartMode(){
+    const sections = $$('section');
+    const times = {}; sections.forEach(s => times[s.id || s.className || s.tagName] = 0);
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        const id = en.target.id || en.target.className || en.target.tagName;
+        if(en.isIntersecting){
+          en.target.__inView = true;
+        } else {
+          en.target.__inView = false;
+        }
+      });
+    }, {threshold:0.65});
+    sections.forEach(s=>io.observe(s));
+    // tick every second to count focused time
+    setInterval(()=>{
+      sections.forEach(s=>{ if(s.__inView){ const id = s.id || s.className || s.tagName; times[id] = (times[id]||0)+1; }});
+      // after 18 seconds total across site, evaluate preferences
+      const total = Object.values(times).reduce((a,b)=>a+b,0);
+      if(total>18){
+        // pick top section
+        const top = Object.entries(times).sort((a,b)=>b[1]-a[1])[0];
+        if(top){
+          const name = top[0].toLowerCase();
+          let chosen='fire-mode';
+          if(name.includes('tech')|| name.includes('explore') || name.includes('fusion')) chosen='metal-mode';
+          else if(name.includes('wisdom')||name.includes('future')|| name.includes('innovation')) chosen='water-mode';
+          else if(name.includes('about')||name.includes('guestbook')) chosen='earth-mode';
+          document.body.className = chosen;
+          // show badge
+          const mb = document.createElement('div'); mb.className='diana-mode-badge'; mb.textContent = `Mode set: ${chosen.replace('-mode','').toUpperCase()}`; document.body.appendChild(mb); setTimeout(()=>mb.remove(),2600);
+        }
+      }
+    },1000);
+  }
+
+  /* 3D page transitions for nav links (anchors) */
+  function pageTransitions(){
+    const links = $$('a.nav-link');
+    links.forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(!href || !href.startsWith('#')) return; // not an anchor
+        e.preventDefault();
+        const target = document.querySelector(href);
+        const container = document.querySelector('.website-container') || document.body;
+        if(window.gsap){
+          gsap.to(container, {duration:0.6, rotationY:-15, opacity:0, ease:'power2.in', onComplete: ()=>{
+            if(target) target.scrollIntoView({behavior:'instant'});
+            gsap.fromTo(container, {rotationY:15, opacity:0}, {duration:0.6, rotationY:0, opacity:1, ease:'power2.out'});
+          }});
+        } else {
+          container.style.transition='transform .5s, opacity .5s'; container.style.transform='rotateY(-10deg)'; container.style.opacity='0'; setTimeout(()=>{ if(target) target.scrollIntoView({behavior:'smooth'}); container.style.transform='rotateY(0deg)'; container.style.opacity='1'; },550);
+        }
+      });
+    });
+  }
+
+  /* Relocate existing clock to bottom-left (already styled in css above) */
+  function relocateClock(){
+    const clk = document.querySelector('.diana-clock');
+    if(clk){
+      // styles are applied via CSS; ensure it's visible and above others
+      clk.style.transition='all .4s ease';
+    }
+  }
+
+  // Init everything safely
+  try{ portalEntry(); }catch(e){console.warn(e);}
+  try{ setupWeather(); }catch(e){console.warn(e);}
+  try{ aiSidekick(); }catch(e){console.warn(e);}
+  try{ visitorsMap(); }catch(e){console.warn(e);}
+  try{ smartMode(); }catch(e){console.warn(e);}
+  try{ pageTransitions(); }catch(e){console.warn(e);}
+  try{ relocateClock(); }catch(e){console.warn(e);}
+
+})();
+</script>
+
 </body>
 </html>
